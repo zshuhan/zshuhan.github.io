@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>计算机网络学习笔记（二）之应用层 | (✿◡‿◡)胖涵</title><meta name="description" content="二、应用层  (一) 、网络应用的体系结构  1）客户机/服务器结构  服务器;  7*24小时提供服务 永久性访问地址 利用大量服务器实现可拓展性  客户机：  与服务器通信，使用服务器提供的服务 间歇性接入网络 可能使用动态IP地址 不会与其他客户机直接通信   2）P2P结构  没有永远在线的服务器 任意端系统/节点之间可以直接通讯 节点间歇性接入网络 节点可能改变IP地址   优点：高度"><meta name="keywords" content="计算机网络"><meta name="author" content="舍予"><meta name="copyright" content="舍予"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="计算机网络学习笔记（二）之应用层"><meta name="twitter:description" content="二、应用层  (一) 、网络应用的体系结构  1）客户机/服务器结构  服务器;  7*24小时提供服务 永久性访问地址 利用大量服务器实现可拓展性  客户机：  与服务器通信，使用服务器提供的服务 间歇性接入网络 可能使用动态IP地址 不会与其他客户机直接通信   2）P2P结构  没有永远在线的服务器 任意端系统/节点之间可以直接通讯 节点间歇性接入网络 节点可能改变IP地址   优点：高度"><meta name="twitter:image" content="https://zshuhan.github.io/img/page/2.jpg"><meta property="og:type" content="article"><meta property="og:title" content="计算机网络学习笔记（二）之应用层"><meta property="og:url" content="https://zshuhan.github.io/2020/04/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%E4%B9%8B%E5%BA%94%E7%94%A8%E5%B1%82/"><meta property="og:site_name" content="(✿◡‿◡)胖涵"><meta property="og:description" content="二、应用层  (一) 、网络应用的体系结构  1）客户机/服务器结构  服务器;  7*24小时提供服务 永久性访问地址 利用大量服务器实现可拓展性  客户机：  与服务器通信，使用服务器提供的服务 间歇性接入网络 可能使用动态IP地址 不会与其他客户机直接通信   2）P2P结构  没有永远在线的服务器 任意端系统/节点之间可以直接通讯 节点间歇性接入网络 节点可能改变IP地址   优点：高度"><meta property="og:image" content="https://zshuhan.github.io/img/page/2.jpg"><meta property="article:published_time" content="2020-04-17T14:38:36.368Z"><meta property="article:modified_time" content="2020-04-17T14:39:59.060Z"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = '1'
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>计算机网络学习笔记（二）之应用层 | (✿◡‿◡)胖涵</title><meta name="description" content="应用层  网络应用的体系结构  客户机/服务器结构  服务器;  7*24小时提供服务 永久性访问地址 利用大量服务器实现可拓展性  客户机：  与服务器通信，使用服务器提供的服务 间歇性接入网络 可能使用动态IP地址 不会与其他客户机直接通信   P2P结构  没有永远在线的服务器 任意端系统/节点之间可以直接通讯 节点间歇性接入网络 节点可能改变IP地址   优点：高度可伸缩 	 缺点：难于"><meta name="keywords" content="计算机网络"><meta name="author" content="舍予"><meta name="copyright" content="舍予"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="计算机网络学习笔记（二）之应用层"><meta name="twitter:description" content="应用层  网络应用的体系结构  客户机/服务器结构  服务器;  7*24小时提供服务 永久性访问地址 利用大量服务器实现可拓展性  客户机：  与服务器通信，使用服务器提供的服务 间歇性接入网络 可能使用动态IP地址 不会与其他客户机直接通信   P2P结构  没有永远在线的服务器 任意端系统/节点之间可以直接通讯 节点间歇性接入网络 节点可能改变IP地址   优点：高度可伸缩 	 缺点：难于"><meta name="twitter:image" content="https://zshuhan.github.io/img/page/2.jpg"><meta property="og:type" content="article"><meta property="og:title" content="计算机网络学习笔记（二）之应用层"><meta property="og:url" content="https://zshuhan.github.io/2020/04/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%E4%B9%8B%E5%BA%94%E7%94%A8%E5%B1%82/"><meta property="og:site_name" content="(✿◡‿◡)胖涵"><meta property="og:description" content="应用层  网络应用的体系结构  客户机/服务器结构  服务器;  7*24小时提供服务 永久性访问地址 利用大量服务器实现可拓展性  客户机：  与服务器通信，使用服务器提供的服务 间歇性接入网络 可能使用动态IP地址 不会与其他客户机直接通信   P2P结构  没有永远在线的服务器 任意端系统/节点之间可以直接通讯 节点间歇性接入网络 节点可能改变IP地址   优点：高度可伸缩 	 缺点：难于"><meta property="og:image" content="https://zshuhan.github.io/img/page/2.jpg"><meta property="article:published_time" content="2020-04-17T14:38:36.368Z"><meta property="article:modified_time" content="2020-04-17T14:47:07.269Z"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = '1'
 var t = Cookies.get("theme")
 if (autoChangeMode == '1'){
   var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -82,9 +82,9 @@ function activateLightMode(){
   opacity: 1
 }
 </style></noscript><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="(✿◡‿◡)胖涵" type="application/atom+xml">
-</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">3</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">1</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-folder-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 娱乐</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 看剧</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#二-应用层"><span class="toc-number">1.</span> <span class="toc-text"> 二、应用层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-网络应用的体系结构"><span class="toc-number">1.1.</span> <span class="toc-text"> (一) 、网络应用的体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1客户机服务器结构"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 1）客户机&#x2F;服务器结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2p2p结构"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 2）P2P结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3混合结构"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 3）混合结构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-网络应用进程通信"><span class="toc-number">1.2.</span> <span class="toc-text"> （二）、网络应用进程通信</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1进程主机上运行的应用程序"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 1）进程：主机上运行的应用程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2套接字socketip地址端口号"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 2）套接字：socket&#x3D;IP地址+端口号</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-网络应用的需求与传输层服务"><span class="toc-number">1.3.</span> <span class="toc-text"> （三）、网络应用的需求与传输层服务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1网络应用对传输服务的需求"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 1）网络应用对传输服务的需求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2使用的传输服务"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 2）使用的传输服务</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-web应用"><span class="toc-number">1.4.</span> <span class="toc-text"> （四）、WEB应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1万维网www"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 1）万维网（WWW）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2统一资源定位符url"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 2）统一资源定位符URL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3http协议"><span class="toc-number">1.4.3.</span> <span class="toc-text"> 3）HTTP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1主要特点"><span class="toc-number">1.4.3.1.</span> <span class="toc-text"> 1.	主要特点：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2两类消息"><span class="toc-number">1.4.3.2.</span> <span class="toc-text"> 2.	两类消息</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#a请求消息"><span class="toc-number">1.4.3.2.1.</span> <span class="toc-text"> a)	请求消息</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#b响应消息"><span class="toc-number">1.4.3.2.2.</span> <span class="toc-text"> b)	响应消息</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3请求一个万维网文档所需的时间"><span class="toc-number">1.4.3.3.</span> <span class="toc-text"> 3.	请求一个万维网文档所需的时间</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4持续连接和非持续连接"><span class="toc-number">1.4.3.4.</span> <span class="toc-text"> 4.	持续连接和非持续连接</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1持续连接"><span class="toc-number">1.4.3.4.1.</span> <span class="toc-text"> 1)	持续连接：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2非持续连接"><span class="toc-number">1.4.3.4.2.</span> <span class="toc-text"> 2)	非持续连接：</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5http过程"><span class="toc-number">1.4.3.5.</span> <span class="toc-text"> 5.	HTTP过程</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五-email应用"><span class="toc-number">1.5.</span> <span class="toc-text"> （五）、Email应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1组成结构"><span class="toc-number">1.5.1.</span> <span class="toc-text"> 1.组成结构</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1用户代理"><span class="toc-number">1.5.1.1.</span> <span class="toc-text"> 1）用户代理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2邮件服务器"><span class="toc-number">1.5.1.2.</span> <span class="toc-text"> 2）邮件服务器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3邮件发送协议smtp和邮件读写协议pop3-imap"><span class="toc-number">1.5.1.3.</span> <span class="toc-text"> 3）邮件发送协议（SMTP）和邮件读写协议（POP3、IMAP）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2电子邮件的信息格式"><span class="toc-number">1.5.2.</span> <span class="toc-text"> 2.电子邮件的信息格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3mime通用互联网邮件扩充"><span class="toc-number">1.5.3.</span> <span class="toc-text"> 3.MIME（通用互联网邮件扩充）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六-dns"><span class="toc-number">1.6.</span> <span class="toc-text"> （六）、DNS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1概述"><span class="toc-number">1.6.1.</span> <span class="toc-text"> 1.概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2域名结构"><span class="toc-number">1.6.2.</span> <span class="toc-text"> 2.域名结构：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3域名服务器"><span class="toc-number">1.6.3.</span> <span class="toc-text"> 3.域名服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4域名解析过程"><span class="toc-number">1.6.4.</span> <span class="toc-text"> 4.域名解析过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七-ftp文件传输协议"><span class="toc-number">1.7.</span> <span class="toc-text"> （七）、FTP（文件传输协议）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1ftp的工作原理"><span class="toc-number">1.7.1.</span> <span class="toc-text"> 1.	FTP的工作原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2ftp的特点"><span class="toc-number">1.7.2.</span> <span class="toc-text"> 2.	FTP的特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3ftp的两个连接tcp连接"><span class="toc-number">1.7.3.</span> <span class="toc-text"> 3.	FTP的两个连接（TCP连接）</span></a></li></ol></li></ol></li></ol></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><div class="post-bg" id="nav" style="background-image: url(/img/page/2.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">(✿◡‿◡)胖涵</a></span><span class="pull_right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-folder-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 娱乐</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 看剧</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="post-info"><div id="post-title"><div class="posttitle">计算机网络学习笔记（二）之应用层</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-04-17 22:38:36"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2020-04-17</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-04-17 22:39:59"><i class="fa fa-history" aria-hidden="true"></i> 更新于 2020-04-17</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="post-meta__icon fa fa-file-word-o" aria-hidden="true"></i><span>字数总计:</span><span class="word-count">2.3k</span><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-clock-o" aria-hidden="true"></i><span>阅读时长: 7 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/2020/04/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%E4%B9%8B%E5%BA%94%E7%94%A8%E5%B1%82/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2020/04/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%E4%B9%8B%E5%BA%94%E7%94%A8%E5%B1%82/" itemprop="commentCount"></span></a></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h2 id="二-应用层"><a class="markdownIt-Anchor" href="#二-应用层"></a> 二、应用层</h2>
-<h3 id="一-网络应用的体系结构"><a class="markdownIt-Anchor" href="#一-网络应用的体系结构"></a> (一) 、网络应用的体系结构</h3>
-<h4 id="1客户机服务器结构"><a class="markdownIt-Anchor" href="#1客户机服务器结构"></a> 1）客户机/服务器结构</h4>
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">3</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">1</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-folder-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 娱乐</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 看剧</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#应用层"><span class="toc-number">1.</span> <span class="toc-text"> 应用层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#网络应用的体系结构"><span class="toc-number">1.1.</span> <span class="toc-text"> 网络应用的体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#客户机服务器结构"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 客户机&#x2F;服务器结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#p2p结构"><span class="toc-number">1.1.2.</span> <span class="toc-text"> P2P结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#混合结构"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 混合结构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络应用进程通信"><span class="toc-number">1.2.</span> <span class="toc-text"> 网络应用进程通信</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#进程主机上运行的应用程序"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 进程：主机上运行的应用程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#套接字socketip地址端口号"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 套接字：socket&#x3D;IP地址+端口号</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络应用的需求与传输层服务"><span class="toc-number">1.3.</span> <span class="toc-text"> 网络应用的需求与传输层服务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#网络应用对传输服务的需求"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 网络应用对传输服务的需求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用的传输服务"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 使用的传输服务</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web应用"><span class="toc-number">1.4.</span> <span class="toc-text"> WEB应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#万维网www"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 万维网（WWW）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#统一资源定位符url"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 统一资源定位符URL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#http协议"><span class="toc-number">1.4.3.</span> <span class="toc-text"> HTTP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#主要特点"><span class="toc-number">1.4.3.1.</span> <span class="toc-text"> 主要特点：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#两类消息"><span class="toc-number">1.4.3.2.</span> <span class="toc-text"> 两类消息</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#a请求消息"><span class="toc-number">1.4.3.2.1.</span> <span class="toc-text"> a)	请求消息</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#b响应消息"><span class="toc-number">1.4.3.2.2.</span> <span class="toc-text"> b)	响应消息</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#请求一个万维网文档所需的时间"><span class="toc-number">1.4.3.3.</span> <span class="toc-text"> 请求一个万维网文档所需的时间</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#持续连接和非持续连接"><span class="toc-number">1.4.3.4.</span> <span class="toc-text"> 持续连接和非持续连接</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#持续连接"><span class="toc-number">1.4.3.4.1.</span> <span class="toc-text"> 持续连接：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#非持续连接"><span class="toc-number">1.4.3.4.2.</span> <span class="toc-text"> 非持续连接：</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#http过程"><span class="toc-number">1.4.3.5.</span> <span class="toc-text"> HTTP过程</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#email应用"><span class="toc-number">1.5.</span> <span class="toc-text"> Email应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#组成结构"><span class="toc-number">1.5.1.</span> <span class="toc-text"> 组成结构</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#用户代理"><span class="toc-number">1.5.1.1.</span> <span class="toc-text"> 用户代理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#邮件服务器"><span class="toc-number">1.5.1.2.</span> <span class="toc-text"> 邮件服务器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#邮件发送协议smtp和邮件读写协议pop3-imap"><span class="toc-number">1.5.1.3.</span> <span class="toc-text"> 邮件发送协议（SMTP）和邮件读写协议（POP3、IMAP）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#电子邮件的信息格式"><span class="toc-number">1.5.2.</span> <span class="toc-text"> 电子邮件的信息格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mime通用互联网邮件扩充"><span class="toc-number">1.5.3.</span> <span class="toc-text"> MIME（通用互联网邮件扩充）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dns"><span class="toc-number">1.6.</span> <span class="toc-text"> DNS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#概述"><span class="toc-number">1.6.1.</span> <span class="toc-text"> 概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#域名结构"><span class="toc-number">1.6.2.</span> <span class="toc-text"> 域名结构：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#域名服务器"><span class="toc-number">1.6.3.</span> <span class="toc-text"> 域名服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#域名解析过程"><span class="toc-number">1.6.4.</span> <span class="toc-text"> 域名解析过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ftp文件传输协议"><span class="toc-number">1.7.</span> <span class="toc-text"> FTP（文件传输协议）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ftp的工作原理"><span class="toc-number">1.7.1.</span> <span class="toc-text"> FTP的工作原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ftp的特点"><span class="toc-number">1.7.2.</span> <span class="toc-text"> FTP的特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ftp的两个连接tcp连接"><span class="toc-number">1.7.3.</span> <span class="toc-text"> FTP的两个连接（TCP连接）</span></a></li></ol></li></ol></li></ol></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><div class="post-bg" id="nav" style="background-image: url(/img/page/2.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">(✿◡‿◡)胖涵</a></span><span class="pull_right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-folder-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 娱乐</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 看剧</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="post-info"><div id="post-title"><div class="posttitle">计算机网络学习笔记（二）之应用层</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-04-17 22:38:36"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2020-04-17</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-04-17 22:47:07"><i class="fa fa-history" aria-hidden="true"></i> 更新于 2020-04-17</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="post-meta__icon fa fa-file-word-o" aria-hidden="true"></i><span>字数总计:</span><span class="word-count">2.3k</span><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-clock-o" aria-hidden="true"></i><span>阅读时长: 7 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/2020/04/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%E4%B9%8B%E5%BA%94%E7%94%A8%E5%B1%82/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2020/04/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%E4%B9%8B%E5%BA%94%E7%94%A8%E5%B1%82/" itemprop="commentCount"></span></a></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h2 id="应用层"><a class="markdownIt-Anchor" href="#应用层"></a> 应用层</h2>
+<h3 id="网络应用的体系结构"><a class="markdownIt-Anchor" href="#网络应用的体系结构"></a> 网络应用的体系结构</h3>
+<h4 id="客户机服务器结构"><a class="markdownIt-Anchor" href="#客户机服务器结构"></a> 客户机/服务器结构</h4>
 <p><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/2020041321341296.png#pic_center"  alt="在这里插入图片描述" /><br />
 <em><strong>服务器;</strong></em></p>
 <ol>
@@ -99,7 +99,7 @@ function activateLightMode(){
 <li>可能使用动态IP地址</li>
 <li>不会与其他客户机直接通信</li>
 </ol>
-<h4 id="2p2p结构"><a class="markdownIt-Anchor" href="#2p2p结构"></a> 2）P2P结构</h4>
+<h4 id="p2p结构"><a class="markdownIt-Anchor" href="#p2p结构"></a> P2P结构</h4>
 <ul>
 <li>没有永远在线的服务器</li>
 <li>任意端系统/节点之间可以直接通讯</li>
@@ -110,13 +110,13 @@ function activateLightMode(){
 <p>优点：高度可伸缩 	<br />
 缺点：难于管理</p>
 </blockquote>
-<h4 id="3混合结构"><a class="markdownIt-Anchor" href="#3混合结构"></a> 3）混合结构</h4>
+<h4 id="混合结构"><a class="markdownIt-Anchor" href="#混合结构"></a> 混合结构</h4>
 <ul>
 <li>文件传输使用P2P结构</li>
 <li>文件的搜索采用C/S结构—集中式</li>
 </ul>
-<h3 id="二-网络应用进程通信"><a class="markdownIt-Anchor" href="#二-网络应用进程通信"></a> （二）、网络应用进程通信</h3>
-<h4 id="1进程主机上运行的应用程序"><a class="markdownIt-Anchor" href="#1进程主机上运行的应用程序"></a> 1）进程：主机上运行的应用程序</h4>
+<h3 id="网络应用进程通信"><a class="markdownIt-Anchor" href="#网络应用进程通信"></a> 网络应用进程通信</h3>
+<h4 id="进程主机上运行的应用程序"><a class="markdownIt-Anchor" href="#进程主机上运行的应用程序"></a> 进程：主机上运行的应用程序</h4>
 <ul>
 <li>
 <p>同一主机上进程的通信：采用进程间通信机制，由操作系统提供</p>
@@ -131,7 +131,7 @@ function activateLightMode(){
 <p>服务器进程：等待通信的进程（等待来自客户的请求）</p>
 </li>
 </ul>
-<h4 id="2套接字socketip地址端口号"><a class="markdownIt-Anchor" href="#2套接字socketip地址端口号"></a> 2）套接字：socket=IP地址+端口号</h4>
+<h4 id="套接字socketip地址端口号"><a class="markdownIt-Anchor" href="#套接字socketip地址端口号"></a> 套接字：socket=IP地址+端口号</h4>
 <pre><code>套接字是提供应用程序创建和使用的数据结构
 在应用层，客户进程和服务器进程间的通信是两个套接字间的通信
 </code></pre>
@@ -156,12 +156,12 @@ function activateLightMode(){
 </ul>
 </li>
 </ul>
-<h3 id="三-网络应用的需求与传输层服务"><a class="markdownIt-Anchor" href="#三-网络应用的需求与传输层服务"></a> （三）、网络应用的需求与传输层服务</h3>
-<h4 id="1网络应用对传输服务的需求"><a class="markdownIt-Anchor" href="#1网络应用对传输服务的需求"></a> 1）网络应用对传输服务的需求</h4>
+<h3 id="网络应用的需求与传输层服务"><a class="markdownIt-Anchor" href="#网络应用的需求与传输层服务"></a> 网络应用的需求与传输层服务</h3>
+<h4 id="网络应用对传输服务的需求"><a class="markdownIt-Anchor" href="#网络应用对传输服务的需求"></a> 网络应用对传输服务的需求</h4>
 <ul>
 <li>可靠性、带宽、时延</li>
 </ul>
-<h4 id="2使用的传输服务"><a class="markdownIt-Anchor" href="#2使用的传输服务"></a> 2）使用的传输服务</h4>
+<h4 id="使用的传输服务"><a class="markdownIt-Anchor" href="#使用的传输服务"></a> 使用的传输服务</h4>
 <p><em><strong>①TCP服务:</strong></em></p>
 <ul>
 <li>面向连接：C/S进程间需要建立连接</li>
@@ -175,24 +175,24 @@ function activateLightMode(){
 <li>不可靠的数据传输</li>
 <li>不提供可靠性保障、流量控制、拥塞控制、延迟保障、带宽保障</li>
 </ul>
-<h3 id="四-web应用"><a class="markdownIt-Anchor" href="#四-web应用"></a> （四）、WEB应用</h3>
-<h4 id="1万维网www"><a class="markdownIt-Anchor" href="#1万维网www"></a> 1）万维网（WWW）</h4>
+<h3 id="web应用"><a class="markdownIt-Anchor" href="#web应用"></a> WEB应用</h3>
+<h4 id="万维网www"><a class="markdownIt-Anchor" href="#万维网www"></a> 万维网（WWW）</h4>
 <pre><code>由多个网页互相连接，以客户机/服务器的方式工作
 </code></pre>
-<h4 id="2统一资源定位符url"><a class="markdownIt-Anchor" href="#2统一资源定位符url"></a> 2）统一资源定位符URL</h4>
+<h4 id="统一资源定位符url"><a class="markdownIt-Anchor" href="#统一资源定位符url"></a> 统一资源定位符URL</h4>
 <ul>
 <li>一般形式是：&lt;协议&gt;://&lt;主机&gt;:&lt;端口&gt;/&lt;路径&gt;<br />
 协议包括ftp、http、News<br />
 主机是存放资源的主机在互联网的域名</li>
 </ul>
-<h4 id="3http协议"><a class="markdownIt-Anchor" href="#3http协议"></a> 3）HTTP协议</h4>
+<h4 id="http协议"><a class="markdownIt-Anchor" href="#http协议"></a> HTTP协议</h4>
 <pre><code>	超文本传输协议：采用C/S结构，使用TCP传输服务，端口号80
 </code></pre>
-<h5 id="1主要特点"><a class="markdownIt-Anchor" href="#1主要特点"></a> 1.	主要特点：</h5>
+<h5 id="主要特点"><a class="markdownIt-Anchor" href="#主要特点"></a> 主要特点：</h5>
 <p>	面向事务的客户服务器协议<br />
 	无状态：服务器不维护任何有关客户端过去所发请求的信息<br />
 	无连接</p>
-<h5 id="2两类消息"><a class="markdownIt-Anchor" href="#2两类消息"></a> 2.	两类消息</h5>
+<h5 id="两类消息"><a class="markdownIt-Anchor" href="#两类消息"></a> 两类消息</h5>
 <h6 id="a请求消息"><a class="markdownIt-Anchor" href="#a请求消息"></a> a)	请求消息</h6>
 <p>①	从客户向服务器发送报文<br />
 ②	通用格式（如图）<br />
@@ -217,38 +217,38 @@ function activateLightMode(){
 <li>	4xx表示客户端的差错</li>
 <li>	5xx表示服务器的差错</li>
 </ul>
-<h5 id="3请求一个万维网文档所需的时间"><a class="markdownIt-Anchor" href="#3请求一个万维网文档所需的时间"></a> 3.	请求一个万维网文档所需的时间</h5>
+<h5 id="请求一个万维网文档所需的时间"><a class="markdownIt-Anchor" href="#请求一个万维网文档所需的时间"></a> 请求一个万维网文档所需的时间</h5>
 <p><img src="/" class="lazyload" data-src="https://img-blog.csdnimg.cn/20200413213025685.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzc5NTExNQ==,size_16,color_FFFFFF,t_70#pic_center"  alt="在这里插入图片描述" /><br />
 TotalTime=2RTT+传输文档的时间</p>
-<h5 id="4持续连接和非持续连接"><a class="markdownIt-Anchor" href="#4持续连接和非持续连接"></a> 4.	持续连接和非持续连接</h5>
-<h6 id="1持续连接"><a class="markdownIt-Anchor" href="#1持续连接"></a> 1)	持续连接：</h6>
+<h5 id="持续连接和非持续连接"><a class="markdownIt-Anchor" href="#持续连接和非持续连接"></a> 持续连接和非持续连接</h5>
+<h6 id="持续连接"><a class="markdownIt-Anchor" href="#持续连接"></a> 持续连接：</h6>
 <ol>
 <li>每个TCP连接允许传输多个对象</li>
 <li>两种工作方式<br />
 ①	流水线方式：客户持续发出请求。<br />
 ②	非流水线方式：客户只有收到个响应后才能发出下一个请求</li>
 </ol>
-<h6 id="2非持续连接"><a class="markdownIt-Anchor" href="#2非持续连接"></a> 2)	非持续连接：</h6>
+<h6 id="非持续连接"><a class="markdownIt-Anchor" href="#非持续连接"></a> 非持续连接：</h6>
 <pre><code>每个TCP连接最多允许传输一个对象。每个对象需2RTT
 </code></pre>
-<h5 id="5http过程"><a class="markdownIt-Anchor" href="#5http过程"></a> 5.	HTTP过程</h5>
+<h5 id="http过程"><a class="markdownIt-Anchor" href="#http过程"></a> HTTP过程</h5>
 <p>(1) URL为http：<a href="//www.abc.com" target="_blank" rel="noopener">//www.abc.com</a>,浏览器分析URL，使用HTTP协议解析。<br />
 (2) 浏览器向 DNS 请求解析 <a href="http://www.abc.com" target="_blank" rel="noopener">www.abc.com</a> 的 IP 地址，得到其IP地址。<br />
 (3)浏览器与服务器建立 TCP 连接，目标端口默认80，发送请求GET。<br />
 (4) 服务器给出响应，把文件 index.htm 发给浏览器。<br />
 (5) TCP 连接释放。<br />
 (6) 浏览器将收到的index.html使用html解释并显示给用户。</p>
-<h3 id="五-email应用"><a class="markdownIt-Anchor" href="#五-email应用"></a> （五）、Email应用</h3>
-<h4 id="1组成结构"><a class="markdownIt-Anchor" href="#1组成结构"></a> 1.组成结构</h4>
-<h5 id="1用户代理"><a class="markdownIt-Anchor" href="#1用户代理"></a> 1）用户代理</h5>
+<h3 id="email应用"><a class="markdownIt-Anchor" href="#email应用"></a> Email应用</h3>
+<h4 id="组成结构"><a class="markdownIt-Anchor" href="#组成结构"></a> 组成结构</h4>
+<h5 id="用户代理"><a class="markdownIt-Anchor" href="#用户代理"></a> 用户代理</h5>
 <ul>
 <li>用户与电子邮件系统的接口</li>
 <li>四个功能：撰写、显示、处理、通信</li>
 </ul>
-<h5 id="2邮件服务器"><a class="markdownIt-Anchor" href="#2邮件服务器"></a> 2）邮件服务器</h5>
+<h5 id="邮件服务器"><a class="markdownIt-Anchor" href="#邮件服务器"></a> 邮件服务器</h5>
 <pre><code>使用CS模型、用来发送和接收邮件
 </code></pre>
-<h5 id="3邮件发送协议smtp和邮件读写协议pop3-imap"><a class="markdownIt-Anchor" href="#3邮件发送协议smtp和邮件读写协议pop3-imap"></a> 3）邮件发送协议（SMTP）和邮件读写协议（POP3、IMAP）</h5>
+<h5 id="邮件发送协议smtp和邮件读写协议pop3-imap"><a class="markdownIt-Anchor" href="#邮件发送协议smtp和邮件读写协议pop3-imap"></a> 邮件发送协议（SMTP）和邮件读写协议（POP3、IMAP）</h5>
 <p><strong>①	SMTP协议（简单邮件传输协议）</strong></p>
 <ul>
 <li>使用TCP进行email消息的可靠传输</li>
@@ -268,30 +268,30 @@ iii.	连接释放</li>
 <li>两种工作模式：下载并保留和下载并删除</li>
 </ul>
 <p><strong>③	IMAP协议</strong>：所有消息统一保留在服务器</p>
-<h4 id="2电子邮件的信息格式"><a class="markdownIt-Anchor" href="#2电子邮件的信息格式"></a> 2.电子邮件的信息格式</h4>
+<h4 id="电子邮件的信息格式"><a class="markdownIt-Anchor" href="#电子邮件的信息格式"></a> 电子邮件的信息格式</h4>
 <p>首部+主体</p>
 <ul>
 <li>首部：发件人、收件人和标题</li>
 <li>主体：消息本身（只能是ASCII字符）</li>
 </ul>
-<h4 id="3mime通用互联网邮件扩充"><a class="markdownIt-Anchor" href="#3mime通用互联网邮件扩充"></a> 3.MIME（通用互联网邮件扩充）</h4>
+<h4 id="mime通用互联网邮件扩充"><a class="markdownIt-Anchor" href="#mime通用互联网邮件扩充"></a> MIME（通用互联网邮件扩充）</h4>
 <ul>
 <li>通过在邮件头部增加额外的行以声明MIME的内容类型</li>
 <li>出现原因：SMTP只能发送英文ASCII，不能发送汉字、图片</li>
 </ul>
-<h3 id="六-dns"><a class="markdownIt-Anchor" href="#六-dns"></a> （六）、DNS</h3>
-<h4 id="1概述"><a class="markdownIt-Anchor" href="#1概述"></a> 1.概述</h4>
+<h3 id="dns"><a class="markdownIt-Anchor" href="#dns"></a> DNS</h3>
+<h4 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h4>
 <ul>
 <li>使用CS模型，运行在UDP上，端口号53</li>
 <li>多层命名服务器构成的分布式数据库</li>
 </ul>
-<h4 id="2域名结构"><a class="markdownIt-Anchor" href="#2域名结构"></a> 2.域名结构：</h4>
+<h4 id="域名结构"><a class="markdownIt-Anchor" href="#域名结构"></a> 域名结构：</h4>
 <ul>
 <li>….三级域名.二级域名.顶级域名<br />
 如：<a href="http://www.abc.com" target="_blank" rel="noopener">www.abc.com</a><br />
 顶级域名有cn，com，net，gov</li>
 </ul>
-<h4 id="3域名服务器"><a class="markdownIt-Anchor" href="#3域名服务器"></a> 3.域名服务器</h4>
+<h4 id="域名服务器"><a class="markdownIt-Anchor" href="#域名服务器"></a> 域名服务器</h4>
 <ul>
 <li>
 <p>分布式DNS系统，以层次方式组织，负责域名-&gt;IP解析</p>
@@ -316,30 +316,29 @@ iii.	连接释放</li>
 <ul>
 <li>主机发出DNS请求时，就发给本地域名服务器</li>
 </ul>
-<h4 id="4域名解析过程"><a class="markdownIt-Anchor" href="#4域名解析过程"></a> 4.域名解析过程</h4>
-<ul>
-<li>域名到IP称为正向解析，IP到域名称为反向解析</li>
-<li>过程：主机向本地域名服务器的查询一般都是采用递归查询。如果查到，则直接返回IP。本地域名服务器无法解析，则本地域名服务器向根域名服务器的查询通常是采用迭代查询，根域名服务器返回顶级域名地址，然后本地服务器向顶级域名服务器查询。顶级服务器若不能解析，则给出权威域名服务器地址，本地域名服务器向权威域名服务器查询。若查到，则缓存后返回给主机；还查不到，则返回域名解析失败</li>
-</ul>
 </li>
 </ul>
-<h3 id="七-ftp文件传输协议"><a class="markdownIt-Anchor" href="#七-ftp文件传输协议"></a> （七）、FTP（文件传输协议）</h3>
+<h4 id="域名解析过程"><a class="markdownIt-Anchor" href="#域名解析过程"></a> 域名解析过程</h4>
+<pre><code>- 域名到IP称为正向解析，IP到域名称为反向解析
+- 过程：主机向本地域名服务器的查询一般都是采用递归查询。如果查到，则直接返回IP。本地域名服务器无法解析，则本地域名服务器向根域名服务器的查询通常是采用迭代查询，根域名服务器返回顶级域名地址，然后本地服务器向顶级域名服务器查询。顶级服务器若不能解析，则给出权威域名服务器地址，本地域名服务器向权威域名服务器查询。若查到，则缓存后返回给主机；还查不到，则返回域名解析失败
+</code></pre>
+<h3 id="ftp文件传输协议"><a class="markdownIt-Anchor" href="#ftp文件传输协议"></a> FTP（文件传输协议）</h3>
 <pre><code>	提供交互的访问，允许客户指明文件的类型与格式，并允许文件具有存取权限。
 </code></pre>
-<h4 id="1ftp的工作原理"><a class="markdownIt-Anchor" href="#1ftp的工作原理"></a> 1.	FTP的工作原理</h4>
+<h4 id="ftp的工作原理"><a class="markdownIt-Anchor" href="#ftp的工作原理"></a> FTP的工作原理</h4>
 <ul>
 <li>使用CS模型，使用TCP传输。FTP服务器有一个主进程负责新请求，若干从进程负责单个请求</li>
 <li>服务器打开端口21，监听并等待客户连接</li>
 <li>有连接请求后，启动从进程处理连接，然后主进程继续监听</li>
 <li>主进程必须在会话期间保存用户状态，记录用户在远程目录上的当前位置</li>
 </ul>
-<h4 id="2ftp的特点"><a class="markdownIt-Anchor" href="#2ftp的特点"></a> 2.	FTP的特点</h4>
+<h4 id="ftp的特点"><a class="markdownIt-Anchor" href="#ftp的特点"></a> FTP的特点</h4>
 <ul>
 <li>只提供文件传送的一些基本的服务，它使用 TCP 可靠的运输服务</li>
 <li>减少或消除在不同操作系统下处理文件的不兼容性</li>
 <li>使用客户服务器方式</li>
 </ul>
-<h4 id="3ftp的两个连接tcp连接"><a class="markdownIt-Anchor" href="#3ftp的两个连接tcp连接"></a> 3.	FTP的两个连接（TCP连接）</h4>
+<h4 id="ftp的两个连接tcp连接"><a class="markdownIt-Anchor" href="#ftp的两个连接tcp连接"></a> FTP的两个连接（TCP连接）</h4>
 <p>①	控制连接</p>
 <ul>
 <li>端口号21，用来传输连接请求等待控制信息，不能用来传输文件。在文件传输过程中一直处于打开状态，方便及时终止传输</li>
