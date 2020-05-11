@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>计算机网络学习笔记（三）之传输层 | (✿◡‿◡)胖涵</title><meta name="description" content="计算机网络学习笔记（三）之传输层  思维导图   传输层协议的概述  进程之间的通信  运输层：为应用程序之间提供端到端的逻辑通信 网络层：提供主机之间的逻辑通信  传输层的功能：分用和复用 传输层所需的协议：面对连接的TCP和无连接的UDP 网络层 VS. 传输层   UDP协议  UDP概述   概念 用户数据报协议（UDP）：在IP 的数据报服务之上增加了复用和分用的功能及差错检测的功能"><meta name="keywords" content="计算机网络"><meta name="author" content="舍予"><meta name="copyright" content="舍予"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="计算机网络学习笔记（三）之传输层"><meta name="twitter:description" content="计算机网络学习笔记（三）之传输层  思维导图   传输层协议的概述  进程之间的通信  运输层：为应用程序之间提供端到端的逻辑通信 网络层：提供主机之间的逻辑通信  传输层的功能：分用和复用 传输层所需的协议：面对连接的TCP和无连接的UDP 网络层 VS. 传输层   UDP协议  UDP概述   概念 用户数据报协议（UDP）：在IP 的数据报服务之上增加了复用和分用的功能及差错检测的功能"><meta name="twitter:image" content="https://zshuhan.github.io/img/page/3.jpg"><meta property="og:type" content="article"><meta property="og:title" content="计算机网络学习笔记（三）之传输层"><meta property="og:url" content="https://zshuhan.github.io/2020/05/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89%E4%B9%8B%E4%BC%A0%E8%BE%93%E5%B1%82/"><meta property="og:site_name" content="(✿◡‿◡)胖涵"><meta property="og:description" content="计算机网络学习笔记（三）之传输层  思维导图   传输层协议的概述  进程之间的通信  运输层：为应用程序之间提供端到端的逻辑通信 网络层：提供主机之间的逻辑通信  传输层的功能：分用和复用 传输层所需的协议：面对连接的TCP和无连接的UDP 网络层 VS. 传输层   UDP协议  UDP概述   概念 用户数据报协议（UDP）：在IP 的数据报服务之上增加了复用和分用的功能及差错检测的功能"><meta property="og:image" content="https://zshuhan.github.io/img/page/3.jpg"><meta property="article:published_time" content="2020-05-11T04:35:35.959Z"><meta property="article:modified_time" content="2020-05-11T07:36:49.176Z"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = '1'
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>计算机网络学习笔记（三）之传输层 | (✿◡‿◡)胖涵</title><meta name="description" content="计算机网络学习笔记（三）之传输层  思维导图   传输层协议的概述  进程之间的通信  运输层：为应用程序之间提供端到端的逻辑通信 网络层：提供主机之间的逻辑通信  传输层的功能：分用和复用 传输层所需的协议：面对连接的TCP和无连接的UDP 网络层 VS. 传输层 [图片上传失败…(image-20200511122242787)]   UDP协议  UDP概述   概念 用户数据报协议（UD"><meta name="keywords" content="计算机网络"><meta name="author" content="舍予"><meta name="copyright" content="舍予"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="计算机网络学习笔记（三）之传输层"><meta name="twitter:description" content="计算机网络学习笔记（三）之传输层  思维导图   传输层协议的概述  进程之间的通信  运输层：为应用程序之间提供端到端的逻辑通信 网络层：提供主机之间的逻辑通信  传输层的功能：分用和复用 传输层所需的协议：面对连接的TCP和无连接的UDP 网络层 VS. 传输层 [图片上传失败…(image-20200511122242787)]   UDP协议  UDP概述   概念 用户数据报协议（UD"><meta name="twitter:image" content="https://zshuhan.github.io/img/page/3.jpg"><meta property="og:type" content="article"><meta property="og:title" content="计算机网络学习笔记（三）之传输层"><meta property="og:url" content="https://zshuhan.github.io/2020/05/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89%E4%B9%8B%E4%BC%A0%E8%BE%93%E5%B1%82/"><meta property="og:site_name" content="(✿◡‿◡)胖涵"><meta property="og:description" content="计算机网络学习笔记（三）之传输层  思维导图   传输层协议的概述  进程之间的通信  运输层：为应用程序之间提供端到端的逻辑通信 网络层：提供主机之间的逻辑通信  传输层的功能：分用和复用 传输层所需的协议：面对连接的TCP和无连接的UDP 网络层 VS. 传输层 [图片上传失败…(image-20200511122242787)]   UDP协议  UDP概述   概念 用户数据报协议（UD"><meta property="og:image" content="https://zshuhan.github.io/img/page/3.jpg"><meta property="article:published_time" content="2020-05-11T04:35:35.959Z"><meta property="article:modified_time" content="2020-05-11T07:58:02.107Z"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = '1'
 var t = Cookies.get("theme")
 if (autoChangeMode == '1'){
   var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -82,9 +82,9 @@ function activateLightMode(){
   opacity: 1
 }
 </style></noscript><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="(✿◡‿◡)胖涵" type="application/atom+xml">
-</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">5</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">2</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-folder-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 娱乐</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 看剧</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#计算机网络学习笔记三之传输层"><span class="toc-number">1.</span> <span class="toc-text"> 计算机网络学习笔记（三）之传输层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思维导图"><span class="toc-number">1.1.</span> <span class="toc-text"> 思维导图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#传输层协议的概述"><span class="toc-number">1.2.</span> <span class="toc-text"> 传输层协议的概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#进程之间的通信"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 进程之间的通信</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#udp协议"><span class="toc-number">1.3.</span> <span class="toc-text"> UDP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#udp概述"><span class="toc-number">1.3.1.</span> <span class="toc-text"> UDP概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#udp的首部格式"><span class="toc-number">1.3.2.</span> <span class="toc-text"> UDP的首部格式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tcp协议"><span class="toc-number">1.4.</span> <span class="toc-text"> TCP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#tcp协议的特点"><span class="toc-number">1.4.1.</span> <span class="toc-text"> TCP协议的特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tcp报文段"><span class="toc-number">1.4.2.</span> <span class="toc-text"> TCP报文段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tcp连接管理"><span class="toc-number">1.4.3.</span> <span class="toc-text"> TCP连接管理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#tcp的连接建立三次握手"><span class="toc-number">1.4.3.1.</span> <span class="toc-text"> TCP的连接建立（三次握手）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#tcp的连接释放四次握手"><span class="toc-number">1.4.3.2.</span> <span class="toc-text"> TCP的连接释放（四次握手）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#对连接释放的总结"><span class="toc-number">1.4.3.3.</span> <span class="toc-text"> 对连接释放的总结：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tcp可靠传输"><span class="toc-number">1.4.4.</span> <span class="toc-text"> TCP可靠传输</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#流量控制"><span class="toc-number">1.4.5.</span> <span class="toc-text"> 流量控制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#拥塞控制"><span class="toc-number">1.4.6.</span> <span class="toc-text"> 拥塞控制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#传输层习题"><span class="toc-number">1.5.</span> <span class="toc-text"> 传输层习题</span></a></li></ol></li></ol></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><div class="post-bg" id="nav" style="background-image: url(/img/page/3.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">(✿◡‿◡)胖涵</a></span><span class="pull_right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-folder-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 娱乐</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 看剧</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="post-info"><div id="post-title"><div class="posttitle">计算机网络学习笔记（三）之传输层</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-05-11 12:35:35"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2020-05-11</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-05-11 15:36:49"><i class="fa fa-history" aria-hidden="true"></i> 更新于 2020-05-11</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="post-meta__icon fa fa-file-word-o" aria-hidden="true"></i><span>字数总计:</span><span class="word-count">5.1k</span><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-clock-o" aria-hidden="true"></i><span>阅读时长: 15 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/2020/05/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89%E4%B9%8B%E4%BC%A0%E8%BE%93%E5%B1%82/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2020/05/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89%E4%B9%8B%E4%BC%A0%E8%BE%93%E5%B1%82/" itemprop="commentCount"></span></a></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h2 id="计算机网络学习笔记三之传输层"><a class="markdownIt-Anchor" href="#计算机网络学习笔记三之传输层"></a> 计算机网络学习笔记（三）之传输层</h2>
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">5</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">2</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-folder-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 娱乐</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 看剧</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#计算机网络学习笔记三之传输层"><span class="toc-number">1.</span> <span class="toc-text"> 计算机网络学习笔记（三）之传输层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思维导图"><span class="toc-number">1.1.</span> <span class="toc-text"> 思维导图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#传输层协议的概述"><span class="toc-number">1.2.</span> <span class="toc-text"> 传输层协议的概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#进程之间的通信"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 进程之间的通信</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#udp协议"><span class="toc-number">1.3.</span> <span class="toc-text"> UDP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#udp概述"><span class="toc-number">1.3.1.</span> <span class="toc-text"> UDP概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#udp的首部格式"><span class="toc-number">1.3.2.</span> <span class="toc-text"> UDP的首部格式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tcp协议"><span class="toc-number">1.4.</span> <span class="toc-text"> TCP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#tcp协议的特点"><span class="toc-number">1.4.1.</span> <span class="toc-text"> TCP协议的特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tcp报文段"><span class="toc-number">1.4.2.</span> <span class="toc-text"> TCP报文段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tcp连接管理"><span class="toc-number">1.4.3.</span> <span class="toc-text"> TCP连接管理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#tcp的连接建立三次握手"><span class="toc-number">1.4.3.1.</span> <span class="toc-text"> TCP的连接建立（三次握手）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#tcp的连接释放四次握手"><span class="toc-number">1.4.3.2.</span> <span class="toc-text"> TCP的连接释放（四次握手）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#对连接释放的总结"><span class="toc-number">1.4.3.3.</span> <span class="toc-text"> 对连接释放的总结：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tcp可靠传输"><span class="toc-number">1.4.4.</span> <span class="toc-text"> TCP可靠传输</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#流量控制"><span class="toc-number">1.4.5.</span> <span class="toc-text"> 流量控制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#拥塞控制"><span class="toc-number">1.4.6.</span> <span class="toc-text"> 拥塞控制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#传输层习题"><span class="toc-number">1.5.</span> <span class="toc-text"> 传输层习题</span></a></li></ol></li></ol></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><div class="post-bg" id="nav" style="background-image: url(/img/page/3.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">(✿◡‿◡)胖涵</a></span><span class="pull_right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-folder-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 娱乐</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 看剧</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="post-info"><div id="post-title"><div class="posttitle">计算机网络学习笔记（三）之传输层</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-05-11 12:35:35"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2020-05-11</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-05-11 15:58:02"><i class="fa fa-history" aria-hidden="true"></i> 更新于 2020-05-11</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="post-meta__icon fa fa-file-word-o" aria-hidden="true"></i><span>字数总计:</span><span class="word-count">5.1k</span><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-clock-o" aria-hidden="true"></i><span>阅读时长: 15 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/2020/05/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89%E4%B9%8B%E4%BC%A0%E8%BE%93%E5%B1%82/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2020/05/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89%E4%B9%8B%E4%BC%A0%E8%BE%93%E5%B1%82/" itemprop="commentCount"></span></a></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h2 id="计算机网络学习笔记三之传输层"><a class="markdownIt-Anchor" href="#计算机网络学习笔记三之传输层"></a> 计算机网络学习笔记（三）之传输层</h2>
 <h3 id="思维导图"><a class="markdownIt-Anchor" href="#思维导图"></a> 思维导图</h3>
-<p><img src="/" class="lazyload" data-src="G:%5Cbaidudownload%5C%E4%BC%A0%E8%BE%93%E5%B1%82.png"  alt="传输层" /></p>
+<p><img src="/" class="lazyload" data-src="/2020/05/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89%E4%B9%8B%E4%BC%A0%E8%BE%93%E5%B1%82/G:%5Cbaidudownload%5C%E4%BC%A0%E8%BE%93%E5%B1%82.png"  alt="传输层"></p>
 <h3 id="传输层协议的概述"><a class="markdownIt-Anchor" href="#传输层协议的概述"></a> 传输层协议的概述</h3>
 <h4 id="进程之间的通信"><a class="markdownIt-Anchor" href="#进程之间的通信"></a> 进程之间的通信</h4>
 <ul>
@@ -93,8 +93,9 @@ function activateLightMode(){
 </ul>
 <p>传输层的功能：分用和复用</p>
 <p>传输层所需的协议：面对连接的TCP和无连接的UDP</p>
-<p>网络层 VS. 传输层</p>
-<img src="/"  lazyloadclass="" data-src="/2020/05/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89%E4%B9%8B%E4%BC%A0%E8%BE%93%E5%B1%82/image-20200511122242787.png">
+<p>网络层 VS. 传输层<br>
+[图片上传失败…(image-20200511122242787)]</p>
+<img src="/" class="lazyload" data-src="/2020/05/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89%E4%B9%8B%E4%BC%A0%E8%BE%93%E5%B1%82/05/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89%E4%B9%8B%E4%BC%A0%E8%BE%93%E5%B1%82/image-20200511122242787.png"  class>
 <h3 id="udp协议"><a class="markdownIt-Anchor" href="#udp协议"></a> UDP协议</h3>
 <h4 id="udp概述"><a class="markdownIt-Anchor" href="#udp概述"></a> UDP概述</h4>
 <ol>
@@ -118,7 +119,7 @@ function activateLightMode(){
 <p>​	UDP数据报包含两个部分：UDP首部和用户数据</p>
 <p>​	UDP首部有8个字节，由4个字段组成，每个字段的长度都是两个字节</p>
 <p>首部格式：</p>
-<p><img src="/" class="lazyload" data-src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200511124651666.png"  alt="image-20200511124651666" /></p>
+<p><img src="/" class="lazyload" data-src="/2020/05/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89%E4%B9%8B%E4%BC%A0%E8%BE%93%E5%B1%82/C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200511124651666.png"  alt="image-20200511124651666"></p>
 <ul>
 <li>源端口：源端口号，在需要对方回信时选用，不需要时可选用0</li>
 <li>目的端口：目的端口号，在终点交付报文时必须要使用</li>
@@ -136,7 +137,7 @@ function activateLightMode(){
 </ul>
 <h4 id="tcp报文段"><a class="markdownIt-Anchor" href="#tcp报文段"></a> TCP报文段</h4>
 <p>TCP报文段用于运载数据，建立连接，释放连接和应答。</p>
-<p><img src="/" class="lazyload" data-src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200511130912574.png"  alt="image-20200511130912574" /></p>
+<p><img src="/" class="lazyload" data-src="/2020/05/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89%E4%B9%8B%E4%BC%A0%E8%BE%93%E5%B1%82/C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200511130912574.png"  alt="image-20200511130912574"></p>
 <p>各字段意义：</p>
 <ul>
 <li>源端口和目的端口：各占 2字节。端口是运输层与应用层的服务接口。运输层的复用和分用功能都要通过端口才能实现。</li>
@@ -164,12 +165,12 @@ function activateLightMode(){
 <li>要允许双方协商一些参数(如最大窗口值、是否使用窗口扩大选项、时间戳选项以及服务质量等)。</li>
 <li>能够对运输实体资源(如缓存大小、连接表中的项目等)进行分配。</li>
 </ol>
-<p>TCP把连接作为最基本的抽象，每- -条TCP连接有两个端点，TCP连接的端点不是主机,不是主机的IP地址,不是应用进程，也不是传输层的协议端口.TCP连接的端口叫做套接字( socket)或插口。端口拼接到IP地址即构成了套接字。<br />
-每一条TCP连接唯一地被通信两端的两个端点(即两个套接字)所确定。<br />
-TCP连接的建立采用客户/服务器方式。主动发起连接建立的应用进程叫做客户机(Client), 而<br />
+<p>TCP把连接作为最基本的抽象，每- -条TCP连接有两个端点，TCP连接的端点不是主机,不是主机的IP地址,不是应用进程，也不是传输层的协议端口.TCP连接的端口叫做套接字( socket)或插口。端口拼接到IP地址即构成了套接字。<br>
+每一条TCP连接唯一地被通信两端的两个端点(即两个套接字)所确定。<br>
+TCP连接的建立采用客户/服务器方式。主动发起连接建立的应用进程叫做客户机(Client), 而<br>
 被动等待连接建立的应用进程叫做服务器(Server)。</p>
 <h5 id="tcp的连接建立三次握手"><a class="markdownIt-Anchor" href="#tcp的连接建立三次握手"></a> TCP的连接建立（三次握手）</h5>
-<p><img src="/" class="lazyload" data-src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200511133218813.png"  alt="image-20200511133218813" /></p>
+<p><img src="/" class="lazyload" data-src="/2020/05/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89%E4%B9%8B%E4%BC%A0%E8%BE%93%E5%B1%82/C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200511133218813.png"  alt="image-20200511133218813"></p>
 <p>步骤：</p>
 <ol>
 <li>客户机的TCP首先向服务器的TCP发送一个连接请求报文段，设置初始序号，SYN=1,序号=X</li>
@@ -177,7 +178,7 @@ TCP连接的建立采用客户/服务器方式。主动发起连接建立的应�
 <li>客户机收到确认报文段后，还要向服务器给出确认，并且也要给该连接分配缓存和变量。这个报文段的ACK标志位被置1,序号字段为x+1,确认号字段ack=y+1</li>
 </ol>
 <h5 id="tcp的连接释放四次握手"><a class="markdownIt-Anchor" href="#tcp的连接释放四次握手"></a> TCP的连接释放（四次握手）</h5>
-<p><img src="/" class="lazyload" data-src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200511133949759.png"  alt="image-20200511133949759" /></p>
+<p><img src="/" class="lazyload" data-src="/2020/05/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89%E4%B9%8B%E4%BC%A0%E8%BE%93%E5%B1%82/C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200511133949759.png"  alt="image-20200511133949759"></p>
 <p>步骤：</p>
 <ol>
 <li>客户机打算关闭连接，就向其TCP发送一个连接释放报文段，并停止再发送数据，主动关闭TCP连接，该报文段的FIN标志位被置1, seq=u</li>
@@ -186,16 +187,16 @@ TCP连接的建立采用客户/服务器方式。主动发起连接建立的应�
 <li>客户机收到连接释放报文段后，必须发出确认。在确认报文段中，ACK字段被置为1，确认号ack=w+1,序号seq=u+1.此时TCP连接还没有释放掉，必须经过时间等待计时器设置的时间2MSL后，A才进入到连接关闭状态。</li>
 </ol>
 <h5 id="对连接释放的总结"><a class="markdownIt-Anchor" href="#对连接释放的总结"></a> 对连接释放的总结：</h5>
-<p>(1)连接建立<br />
-分为3步:<br />
-①SYN=1，seq=x.<br />
-②SYN=1，ACK=1, seq=y, ack=x+1.<br />
-③ACK=1，seq=x+1, ack= y+1.<br />
-(2)释放连接<br />
-分为4步:<br />
-①FIN=1, seq=u。<br />
-②ACK=1, seq=v, ack=u+1.<br />
-③FIN=1, ACK=1，seq=w， ack=u+1。<br />
+<p>(1)连接建立<br>
+分为3步:<br>
+①SYN=1，seq=x.<br>
+②SYN=1，ACK=1, seq=y, ack=x+1.<br>
+③ACK=1，seq=x+1, ack= y+1.<br>
+(2)释放连接<br>
+分为4步:<br>
+①FIN=1, seq=u。<br>
+②ACK=1, seq=v, ack=u+1.<br>
+③FIN=1, ACK=1，seq=w， ack=u+1。<br>
 ④ACK=1, seq=u+1, ack-=w+1.</p>
 <h4 id="tcp可靠传输"><a class="markdownIt-Anchor" href="#tcp可靠传输"></a> TCP可靠传输</h4>
 <p>TCP使用了校验、序号、确认和重传等机制来实现可靠传输</p>
@@ -226,8 +227,8 @@ TCP连接的建立采用客户/服务器方式。主动发起连接建立的应�
 <p>拥塞控制所要做的都有一个前提，就是网络能够承受现有的网络负荷。</p>
 </li>
 <li>
-<p>拥塞控制是一 个全局性的过程，涉及到所有的<br />
-主机、所有的路由器，以及与降低网络传输性<br />
+<p>拥塞控制是一 个全局性的过程，涉及到所有的<br>
+主机、所有的路由器，以及与降低网络传输性<br>
 能有关的所有因素。</p>
 </li>
 </ul>
@@ -260,66 +261,66 @@ TCP连接的建立采用客户/服务器方式。主动发起连接建立的应�
 <h3 id="传输层习题"><a class="markdownIt-Anchor" href="#传输层习题"></a> 传输层习题</h3>
 <ol>
 <li>
-<p>主机甲和主机乙已建立了TCP连接，甲始终以MSS=1KB大小的段发送数据，并一直有数据发送;乙每收到一个数据段都会发出一个接收窗口为10KB的确认段。若甲在t时刻发生超时时拥塞窗口为8KB，则从t时刻起，不再发生超时的情况下，经过10个RTT后，甲的发送窗口是(  )。<br />
+<p>主机甲和主机乙已建立了TCP连接，甲始终以MSS=1KB大小的段发送数据，并一直有数据发送;乙每收到一个数据段都会发出一个接收窗口为10KB的确认段。若甲在t时刻发生超时时拥塞窗口为8KB，则从t时刻起，不再发生超时的情况下，经过10个RTT后，甲的发送窗口是(  )。<br>
 A.10KB 			B.12KB			C.14KB 			D.15KB</p>
 <p>【答案】A</p>
-<p>【解析】当t时刻发生超时时，把shresh设为8的一半，即为4,且拥塞窗口设为1KB.然后经历10个RTT后，拥塞窗口的大小依次为2、4、 5.6、7、8、9、10、 11. 12, 而发送窗口取当时的拥塞窗口和接收窗口的最小值，而接收窗口始终为10KB,所以此时的发送窗口为10KB,选A.<br />
+<p>【解析】当t时刻发生超时时，把shresh设为8的一半，即为4,且拥塞窗口设为1KB.然后经历10个RTT后，拥塞窗口的大小依次为2、4、 5.6、7、8、9、10、 11. 12, 而发送窗口取当时的拥塞窗口和接收窗口的最小值，而接收窗口始终为10KB,所以此时的发送窗口为10KB,选A.<br>
 实际上该题接收窗口一直为10KB,可知不管何时，发送窗口一定小于等于10KB, 选项中只有A选项满足条件，可直接得出选A.</p>
 </li>
 <li>
-<p>(  )字段包含在TCP首部中，而不包含在UDP首部中。<br />
-A.目的端口号<br />
-B.序列号<br />
-C.校验和<br />
+<p>(  )字段包含在TCP首部中，而不包含在UDP首部中。<br>
+A.目的端口号<br>
+B.序列号<br>
+C.校验和<br>
 D.目的IP地址</p>
 <p>【答案】B</p>
 <p>【解析】TCP报文段和UDP数据报都包含源端口、目的端口、校验号。由于UDP提供不可靠的传输服务，不需要对报文编号，因此不会有序列号字段，而TCP提供可靠的传输服务，因此需要设置序列号字段。而目的IP地址属于IP数据报中的内容。</p>
 </li>
 <li>
-<p>一个TCP连接的数据传输阶段，如果发送端的发送窗口值由2000变为3000,意味着发送端可以(  ）。<br />
-A.在收到一个确认之前可以发送3000个TCP报文段<br />
-B.在收到一个确认之前可以发送1000字节<br />
-C.在收到一个确认之前可以发送3000字节<br />
+<p>一个TCP连接的数据传输阶段，如果发送端的发送窗口值由2000变为3000,意味着发送端可以(  ）。<br>
+A.在收到一个确认之前可以发送3000个TCP报文段<br>
+B.在收到一个确认之前可以发送1000字节<br>
+C.在收到一个确认之前可以发送3000字节<br>
 D.在收到一个确认之前可以发送2000个TCP报文段</p>
 <p>【答案】C</p>
 <p>【解析】TCP提供的是可靠的字节流传输服务，使用窗口机制进行流量控制与拥塞控制。TCP的滑动窗口机制是面向字节的，因此窗口大小的单位为字节。假设发送窗口的大小为N,这意味着发送端可以在没有收到确认的情况下连续发送N个字节。</p>
 </li>
 <li>
-<p>主机甲与主机乙之间已建立一个TCP连接，主机甲向主机乙发送了两个连续的TCP段，分别包含300字节和500字节的有效载荷，第一个段的序列号为200，主机乙正确接收到这两个数据段后，发送给主机甲的确认序列号是( )。<br />
-A.500<br />
-B.700<br />
-C.800<br />
+<p>主机甲与主机乙之间已建立一个TCP连接，主机甲向主机乙发送了两个连续的TCP段，分别包含300字节和500字节的有效载荷，第一个段的序列号为200，主机乙正确接收到这两个数据段后，发送给主机甲的确认序列号是( )。<br>
+A.500<br>
+B.700<br>
+C.800<br>
 D.1000</p>
 <p>【答案】D</p>
 <p>【解析】返回的确认序列号是接收方期待收到对方下一个报文段数据部分的第一-个字 节的序号，因此乙在正确接收到两个段后，返回给甲的确认序列号是200+300+500=1000.</p>
 </li>
 <li>
-<p>主机甲向主机乙发送一个(SYN=I, seq-11220) 的TCP段，期望与主机乙建立TCP连接，若主机乙接受该连接请求，则主机乙向主机甲发送的正确的TCP段可能是( )。<br />
-A. (SYN=0, ACK=0，seq=11221， ack=11221 )<br />
-B. (SYN=1， ACK=I, seq=11220， ack-11220 )<br />
-C. (SYN=1, ACK=1，seq-11221， ack=11221 )<br />
+<p>主机甲向主机乙发送一个(SYN=I, seq-11220) 的TCP段，期望与主机乙建立TCP连接，若主机乙接受该连接请求，则主机乙向主机甲发送的正确的TCP段可能是( )。<br>
+A. (SYN=0, ACK=0，seq=11221， ack=11221 )<br>
+B. (SYN=1， ACK=I, seq=11220， ack-11220 )<br>
+C. (SYN=1, ACK=1，seq-11221， ack=11221 )<br>
 D. (SYN=0, ACK=0, seq=11220， ack-11220 )</p>
 <p>【答案】C</p>
 <p>【解析】在确认报文段中，同步位SYN和确认位ACK必须都是1;返回的确认号seq是甲发送的初始序号seq-11220 加1,即ack=11221; 同时乙也要选择并消耗一个初始序号seq, seq 值由乙的TCP进程任意给出，它与确认号、请求报文段的序号没有任何关系。</p>
 </li>
 <li>
-<p>可靠的传输协议中的“可靠”指的是( )。<br />
-A.使用面向连接的会话<br />
-B.使用“尽力而为”的传输<br />
-C.使用滑动窗口来维持可靠性<br />
-D.使用确认机制来确保传输的数据不丢失<br />
-【答案】 D<br />
+<p>可靠的传输协议中的“可靠”指的是( )。<br>
+A.使用面向连接的会话<br>
+B.使用“尽力而为”的传输<br>
+C.使用滑动窗口来维持可靠性<br>
+D.使用确认机制来确保传输的数据不丢失<br>
+【答案】 D<br>
 【解析】如果-一个协议使用确认机制对传输的数据进行认，那么可以认为是一一个可靠的协议。如果-一个协议用“尽力而为”的传输方式，那么是不可靠的。例如，TCP 对传输的报文段提供确认，因此是可靠的传输协议;而UDP不提供确认，因此是不可靠的传输协议。</p>
 </li>
 <li>
-<p>简述ICMP、 DHCP、 UDP和SMTP作用。<br />
-答: ICMP：:辅助IP协议正常工作，用以解决差错报告与控制的主要手段。<br />
-DHCP:集中管理、分配IP地址,便网络环境中的主机动态获得IP地址、DNS服务器地址等信息，并能提供地址的使用率。<br />
-UDP: 提供无连接、“尽最大努力交付”的教据报传输服务。<br />
+<p>简述ICMP、 DHCP、 UDP和SMTP作用。<br>
+答: ICMP：:辅助IP协议正常工作，用以解决差错报告与控制的主要手段。<br>
+DHCP:集中管理、分配IP地址,便网络环境中的主机动态获得IP地址、DNS服务器地址等信息，并能提供地址的使用率。<br>
+UDP: 提供无连接、“尽最大努力交付”的教据报传输服务。<br>
 SMTP:向用户提供高效可靠的邮件传输。</p>
 </li>
 <li>
-<p>在TCP中拥塞控制中，什么是慢开始、拥塞避免、快重传和快恢复算法?这里每一种算法各起什么作用?“乘法减小“和”加<br />
+<p>在TCP中拥塞控制中，什么是慢开始、拥塞避免、快重传和快恢复算法?这里每一种算法各起什么作用?“乘法减小“和”加<br>
 法增大&quot;各用在什么情况下?</p>
 <p>答:①慢开始:开始发送时，令拥塞窗口=1.，每收到一个对新的报文的确认后窗口十1。作用: 窗口大小成指数增长，可使分组注入到网络的速率更合理</p>
 <p>②拥塞避免:拥塞离口每经过一个RTT后+1。当窗口&lt;阈值时，使用慢开始;当拥塞窗口&gt;阈值时,改用拥塞避免。作用:便拥塞窗口按线性增长,而不是加信。</p>
@@ -329,7 +330,7 @@ SMTP:向用户提供高效可靠的邮件传输。</p>
 <p>⑥加法增大：在拥塞阶段,拥塞窗口按线性规律增大</p>
 </li>
 </ol>
-</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">舍予</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zshuhan.github.io/2020/05/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89%E4%B9%8B%E4%BC%A0%E8%BE%93%E5%B1%82/">https://zshuhan.github.io/2020/05/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89%E4%B9%8B%E4%BC%A0%E8%BE%93%E5%B1%82/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://zshuhan.github.io" target="_blank">(✿◡‿◡)胖涵</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></div><div class="post_share"><div class="social-share" data-image="/img/page/4.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/reward/wechat.png" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/reward/alipay.jpg" alt="支付宝"/><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="next-post pull-full"><a href="/2020/04/22/hexo+github%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"><img class="next_cover lazyload" data-src="/img/page/4.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">hexo+github搭建免费个人博客</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2020/04/17/计算机网络学习笔记（二）之应用层/" title="计算机网络学习笔记（二）之应用层"><img class="relatedPosts_cover lazyload"data-src="/img/page/2.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-04-17</div><div class="relatedPosts_title">计算机网络学习笔记（二）之应用层</div></div></a></div><div class="relatedPosts_item"><a href="/2020/04/17/计算机网络学习笔记（一）/" title="计算机网络学习笔记（一）"><img class="relatedPosts_cover lazyload"data-src="/img/page/1.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-04-17</div><div class="relatedPosts_title">计算机网络学习笔记（一）</div></div></a></div></div><div class="clear_both"></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var GUEST_INFO = ['nick','mail','link'];
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">舍予</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zshuhan.github.io/2020/05/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89%E4%B9%8B%E4%BC%A0%E8%BE%93%E5%B1%82/">https://zshuhan.github.io/2020/05/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89%E4%B9%8B%E4%BC%A0%E8%BE%93%E5%B1%82/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://zshuhan.github.io" target="_blank">(✿◡‿◡)胖涵</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></div><div class="post_share"><div class="social-share" data-image="/img/page/3.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/reward/wechat.png" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/reward/alipay.jpg" alt="支付宝"/><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="next-post pull-full"><a href="/2020/04/22/hexo+github%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"><img class="next_cover lazyload" data-src="/img/page/4.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">hexo+github搭建免费个人博客</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2020/04/17/计算机网络学习笔记（一）/" title="计算机网络学习笔记（一）"><img class="relatedPosts_cover lazyload"data-src="/img/page/1.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-04-17</div><div class="relatedPosts_title">计算机网络学习笔记（一）</div></div></a></div><div class="relatedPosts_item"><a href="/2020/04/17/计算机网络学习笔记（二）之应用层/" title="计算机网络学习笔记（二）之应用层"><img class="relatedPosts_cover lazyload"data-src="/img/page/2.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-04-17</div><div class="relatedPosts_title">计算机网络学习笔记（二）之应用层</div></div></a></div></div><div class="clear_both"></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var GUEST_INFO = ['nick','mail','link'];
 var guest_info = 'nick,mail,link'.split(',').filter(function(item){
   return GUEST_INFO.indexOf(item) > -1
 });
